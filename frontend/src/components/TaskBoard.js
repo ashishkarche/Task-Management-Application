@@ -28,7 +28,7 @@ const TaskBoard = () => {
   const fetchTasks = async () => {
     setLoading(true);
     try {
-      const response = await fetch('http://localhost:5000/tasks');
+      const response = await fetch('https://task-management-application-chi-rouge.vercel.app/tasks');
       const data = await response.json();
       setTasks(organizeTasksByStatus(data));
     } catch (error) {
@@ -41,7 +41,7 @@ const TaskBoard = () => {
   // Handle task deletion
   const deleteTask = async (taskId) => {
     try {
-      await fetch(`http://localhost:5000/tasks/${taskId}`, { method: 'DELETE' });
+      await fetch(`https://task-management-application-chi-rouge.vercel.app/tasks/${taskId}`, { method: 'DELETE' });
 
       // Remove task from the state
       const updatedTasks = { ...tasks };

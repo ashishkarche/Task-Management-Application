@@ -47,7 +47,7 @@ const AddTaskModal = ({ isOpen, onClose, onTaskCreated }) => {
       setLoading(true);
       setSubmitError(null);
       try {
-        const response = await fetch('http://localhost:5000/tasks', {
+        const response = await fetch('https://task-management-application-chi-rouge.vercel.app/tasks', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({
