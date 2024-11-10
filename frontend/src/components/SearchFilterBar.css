@@ -1,0 +1,142 @@
+/* SearchFilterBar.css */
+.search-filter-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #f3f5f9;
+  padding: 12px 20px;
+  border-radius: 16px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.08);
+  width: 90%;
+  margin: 20px auto;
+  flex-wrap: wrap; /* Allows wrapping on smaller screens */
+}
+
+.search-bar {
+  display: flex;
+  align-items: center;
+  background-color: #ffffff;
+  padding: 8px 16px;
+  border-radius: 16px;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+  flex-grow: 1;
+  max-width: 70%; /* Set a max width for larger screens */
+  margin-right: 10px;
+}
+
+.search-bar .search-icon {
+  margin-right: 8px;
+  color: #888;
+}
+
+.search-bar input {
+  border: none;
+  outline: none;
+  font-size: 14px;
+  color: #333;
+  width: 100%;
+}
+
+.filter-btn {
+  display: flex;
+  align-items: center;
+  padding: 8px 16px;
+  background-color: #ffffff;
+  border: none;
+  border-radius: 12px;
+  font-size: 14px;
+  color: #555;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+  position: relative;
+}
+
+.filter-btn:hover {
+  background-color: #e0e4eb;
+}
+
+.filter-btn .filter-icon {
+  margin-right: 8px;
+  color: #888;
+}
+
+.filter-dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #fff;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  width: 150px;
+  display: none;
+  flex-direction: column;
+  padding: 5px 0;
+  z-index: 10;
+}
+
+/* Show dropdown when open */
+.filter-btn.open .filter-dropdown {
+  display: flex;
+}
+
+/* Dropdown options styles */
+.filter-dropdown .filter-option {
+  padding: 10px 15px;
+  font-size: 14px;
+  color: #555;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.filter-dropdown .filter-option:hover {
+  background-color: #f0f0f0;
+}
+
+/* Tablet view adjustments */
+@media (max-width: 768px) {
+  .search-filter-container {
+    flex-direction: column;
+    align-items: stretch;
+    padding: 10px;
+  }
+
+  .search-bar {
+    max-width: 100%; /* Full width on tablets */
+    margin: 0 0 10px 0; /* Adds space below search bar */
+  }
+
+  .filter-btn {
+    width: 100%; /* Full width for the button on smaller screens */
+  }
+
+  .filter-dropdown {
+    position: static;
+    width: 100%;
+    margin-top: 10px;
+  }
+}
+
+/* Mobile view adjustments */
+@media (max-width: 480px) {
+  .search-filter-container {
+    padding: 8px;
+  }
+
+  .search-bar {
+    padding: 6px 12px;
+  }
+
+  .search-bar input {
+    font-size: 13px;
+  }
+
+  .filter-btn {
+    font-size: 13px;
+    padding: 6px 12px;
+  }
+
+  .filter-dropdown .filter-option {
+    font-size: 13px;
+  }
+}

@@ -1,0 +1,253 @@
+/* Modal background overlay */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+}
+
+/* Modal container */
+.add-task-modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #ffffff;
+    padding: 30px;
+    width: 400px;
+    max-width: 300px;
+    border-radius: 12px;
+    box-shadow: 0px 6px 16px rgba(0, 0, 0, 0.15);
+    z-index: 1000;
+    font-family: Arial, sans-serif;
+    overflow-y: auto;
+}
+
+/* Header styles */
+.add-task-modal .header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+.add-task-modal .header h2 {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+}
+
+.add-task-modal .header h2::before {
+    content: "•";
+    color: #28a745;
+    font-size: 24px;
+    margin-right: 8px;
+}
+
+.add-task-modal .header .add-icon {
+    font-size: 18px;
+    color: #333;
+    cursor: pointer;
+}
+
+/* Task title and content input styling */
+.add-task-modal .task-title-input,
+.add-task-modal .task-content-input {
+    width: 100%;
+    padding: 8px;
+    font-size: 14px;
+    color: #333;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    margin-bottom: 15px;
+    font-family: inherit;
+}
+
+.add-task-modal .task-content-input {
+    resize: vertical;
+    min-height: 80px;
+}
+
+/* Footer and label styling */
+.add-task-modal .task-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 12px;
+    color: #888;
+    border-top: 1px solid #ddd;
+    padding-top: 10px;
+    margin-top: 10px;
+}
+
+.add-task-modal .task-footer .label {
+    font-weight: bold;
+    color: #333;
+    cursor: pointer;
+}
+
+/* DatePicker Popup */
+.react-datepicker {
+    font-family: Arial, sans-serif;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.15);
+    position: absolute;
+    z-index: 1100;
+    top: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #fff;
+    width: 350px;
+    font-size: 12px;
+}
+
+/* Hide triangle pointer */
+.react-datepicker__triangle {
+    display: none;
+}
+
+/* Calendar header */
+.react-datepicker__header {
+    background-color: #3f403f;
+    color: white;
+    font-weight: bold;
+    padding: 6px;
+}
+.error-message {
+    color: red;
+    font-size: 12px;
+    margin-top: 4px;
+    margin-bottom: 8px;
+}
+
+/* Calendar day styling */
+.react-datepicker__day {
+    font-size: 12px;
+    padding: 8px;
+    cursor: pointer;
+}
+
+.react-datepicker__day:hover {
+    background-color: #28a745;
+    color: rgb(66, 64, 64);
+}
+
+.react-datepicker__day--selected {
+    background-color: #4e504e;
+    color: white;
+}
+
+/* Adjust input for date */
+.react-datepicker__input-container input {
+    padding: 6px;
+    font-size: 14px;
+    color: #333;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    width: 100%;
+    font-family: inherit;
+}
+
+/* Adjust spacing and visibility of the datepicker */
+.add-task-modal .deadline-input {
+    width: 100%;
+    padding: 6px;
+    font-size: 14px;
+    color: #333;
+    border-radius: 4px;
+    margin-top: 10px;
+    font-family: inherit;
+}
+
+/* Responsive styles */
+
+/* For small devices (mobile phones) */
+@media screen and (max-width: 480px) {
+    .add-task-modal {
+        width: 90%;
+        padding: 20px;
+    }
+
+    .add-task-modal .header h2 {
+        font-size: 16px;
+    }
+
+    .add-task-modal .header h2::before {
+        font-size: 20px;
+    }
+
+    .add-task-modal .task-title-input,
+    .add-task-modal .task-content-input {
+        font-size: 12px;
+        padding: 6px;
+    }
+
+    .react-datepicker {
+        width: 270px; /* Adjust calendar width for mobile */
+    }
+
+    .react-datepicker__header {
+        padding: 4px; /* Reduce header padding */
+    }
+
+    .react-datepicker__day {
+        padding: 6px; /* Reduce day cell padding */
+        font-size: 10px; /* Smaller font size */
+    }
+}
+
+/* For medium devices (tablets) */
+@media screen and (max-width: 768px) {
+    .add-task-modal {
+        width: 80%;
+        padding: 25px;
+    }
+
+    .add-task-modal .header h2 {
+        font-size: 17px;
+    }
+
+    .react-datepicker {
+        width: 300px; /* Adjust calendar width for tablets */
+    }
+
+    .react-datepicker__header {
+        padding: 5px; /* Slightly reduced padding */
+    }
+
+    .react-datepicker__day {
+        padding: 7px; /* Slightly reduced day cell padding */
+        font-size: 11px; /* Adjust font size */
+    }
+}
+
+/* For large devices (desktops) */
+@media screen and (min-width: 769px) {
+    .add-task-modal {
+        width: 400px;
+        padding: 30px;
+    }
+
+    .add-task-modal .header h2 {
+        font-size: 18px;
+    }
+
+    .react-datepicker {
+        width: 350px; /* Default width */
+    }
+
+    .react-datepicker__header {
+        padding: 6px; /* Default padding */
+    }
+
+    .react-datepicker__day {
+        padding: 8px; /* Default day cell padding */
+        font-size: 12px; /* Default font size */
+    }
+}
